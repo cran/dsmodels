@@ -29,4 +29,3 @@ Supported features include dsdots, dsarrows, dscurves, dspoints, and colorRegion
 The \code{+} operator should be the only one required.
 }
 \keyword{internal}
-

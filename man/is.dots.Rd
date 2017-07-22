@@ -13,4 +13,3 @@ is.dots(x)
 Reports whether x is a dsdots object.
 }
 \keyword{internal}
-

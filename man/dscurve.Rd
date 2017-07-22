@@ -2,15 +2,15 @@
 % Please edit documentation in R/dscurve.R
 \name{dscurve}
 \alias{dscurve}
-\title{Curve objects}
+\title{Parametric curves or a graph of functions}
 \usage{
-dscurve(fun, yfun = "", col = "black", image = "", lwd = 3, n = NULL,
-  iters = 0, crop = TRUE, tstart = 0, tend = 1, discretize = FALSE,
-  xlim = NULL, ...)
+dscurve(fun, yfun = NULL, col = "black", image = NULL, lwd = 3,
+  n = NULL, iters = 0, crop = TRUE, tstart = 0, tend = 1,
+  discretize = FALSE, xlim = NULL, ...)
 }
 \arguments{
 \item{fun}{A function. If \code{yfun} is provided, this is the x-equation of the parametric
-equations. If not, the function's graph is used.
+equations. If not, the function's graph is rendered.
 See sections describing graphs and parameteric equations for more info.}
 
 \item{yfun}{The y-equation of the parameteric equations.
@@ -50,17 +50,18 @@ is plotted. Defaults to the x limits of the model's dsrange.}
 }
 \description{
 This function takes a description of a curve and creates an object displaying the curve, and optionally
-it's behavior throughout iterations of the system.
+it's behavior throughout iterations of the system. Functions can be provided as expressions of \code{x},
+for graphing curves, or \code{t}, for parametric curves.
 The curve is defined either by the graph of a single function or a pair of parametric
 equations. By default, rendered with the \code{lines} function.
 }
 \section{The graph of a function}{
 
 
-If the parameter \code{fun} is a function and
-the parameter \code{yfun} is not provided, then \code{dscurve} contains
+If the parameter \code{yfun} is not provided, then \code{dscurve} contains
 the curve of points (x,fun(x)). The inputs to \code{fun} are \code{n} points between the maximum
 \code{\link{dsrange}}'s x limits, but can be overwritten with the \code{xlim} parameter.
+\code{fun} can either be any function of a single parameter, or an expression with exactly \code{x} as the free variable.
 }
 
 \section{Parametric equations}{
@@ -70,6 +71,7 @@ If the parameter \code{fun} and \code{yfun} are both provided,
 \code{dscurve} contains the parametric curve described by the functions. The function is
 calculated at \code{n}
 points ranging from \code{tmin} to \code{tmax}.
+\code{fun} and \code{yfun} can either be any function of a single parameter, or an expression with exactly \code{t} as the free variable.
 }
 
 \section{Images of curves}{
@@ -89,6 +91,7 @@ successive images are displayed, using a gradient between \code{col} and \code{i
 In most cases, rather than specifying \code{col} and \code{image} separately, they may be
 combined into a single vector.
 }
+
 \examples{
 library(dsmodels)
 
@@ -102,27 +105,26 @@ fun <- function(X,Y) {
 model <- dsmodel(fun, title = "Points on a One-Dimensional Curve")
 range <- dsrange(-2:2,-2:2, discretize = 0.5)
 
-# Add a one-dimensional curve and its image in blue.
-curve1 <- dscurve(function(x) x^2,
-                col = "orange",
-                image = "blue",
-                discretize = TRUE,
-                xlim = c(-2,2))
-model +
- range +
-	curve1
+# Add the graph of a function and its image in blue.
+graphcrv <- dscurve(function(x) x^2,
+                    col = "orange",
+                    image = "blue",
+                    discretize = TRUE,
+                    xlim = c(-2,2))
+model + range +	graphcrv
+# Add the graph of expression of x.
+model + dscurve(x^2+1, col="yellow")
 
 # Create a parametric curve with image iterations red then green.
-curve2 <- dscurve(function(x) x^2,
-                function(x) x,
-                image = c("red", "green"),
-                tstart = -2, tend = 2)
+paramcrv <- dscurve(function(t) t^2, function(t) t,
+                    image = c("red", "green"),
+                    tstart = -2, tend = 2)
 dsmodel(fun, "A Parametric Curve and Iterations of that Curve") +
- dsrange(-2:2, -2:2, discretize = 0.5) +
- curve2
+  dsrange(-2:2, -2:2, discretize = 0.5) +
+# A parametic curve defined by expressions of t.
+  paramcrv + dscurve(4*t-2,4*t-2,col="blue")
 
 }
 \seealso{
 \code{\link{dspoint}}
 }
-

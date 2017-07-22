@@ -13,4 +13,3 @@ is.dsarrows(x)
 Reports whether x is a dsarrows object.
 }
 \keyword{internal}
-

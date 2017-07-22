@@ -13,4 +13,3 @@ is.dspoint(x)
 Reports whether x is a dspoint
 }
 \keyword{internal}
-

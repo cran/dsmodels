@@ -13,4 +13,3 @@ is.range(x)
 Reports whether x is a range.
 }
 \keyword{internal}
-

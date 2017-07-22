@@ -13,4 +13,3 @@ NaNRemove(twoDList)
 Finds and removes all 2-d points which produce NaNs
 }
 \keyword{internal}
-

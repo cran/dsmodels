@@ -2,10 +2,10 @@
 % Please edit documentation in R/dspoint.R
 \name{dspoint}
 \alias{dspoint}
-\title{Individual points of interest.}
+\title{Individual points and their images}
 \usage{
 dspoint(x, y, label = "", pch = 21, size = 2, col = "blue",
-  regionCol = NULL, image = "", offset = c(0, 0.5), display = TRUE,
+  regionCol = NULL, image = "", offset = NULL, display = TRUE,
   fixed = FALSE, iters = 0, attractor = FALSE, crop = TRUE,
   artificial = FALSE, ...)
 }
@@ -14,7 +14,9 @@ dspoint(x, y, label = "", pch = 21, size = 2, col = "blue",
 
 \item{y}{The y-coordinate of the point.}
 
-\item{label}{A string label. Text will appear above the dot by default.
+\item{label}{A string label. Text can be input in the form of pseudo-LaTeX code within quotes.
+See \code{\link[latex2exp]{TeX}} for more details.
+Text will appear above the dot by default.
 Please see the \code{offset} parameter to adjust.}
 
 \item{pch}{Plotting 'character' or symbol to use, default is 21 (filled circle). See \code{help(pch)} for details.}
@@ -25,15 +27,15 @@ Please see the \code{offset} parameter to adjust.}
 Use "NA" or "" to hide the point. See also \code{display}.}
 
 \item{regionCol}{An alternate color used to define the color of the region for
-\code{\link{guessregions}()}. Defaults to \code{col} or \code{col[1]}.}
+\code{\link{simbasins}()}. Defaults to \code{col} or \code{col[1]}.}
 
 \item{image}{A single color as a string, or a vector of colors as a string.
 See details for more information.}
 
-\item{offset}{This will offset the label. Enter as \code{c(x, y)}.}
+\item{offset}{This will offset the label. Enter as \code{c(x, y)}. Defaults to an automatic scale dependent on the \code{dsrange}'s \code{y} axis size.}
 
 \item{display}{Set display = FALSE to hide the dot, but still add to your system.
-Mostly useful for \code{\link{guessregions}()}.}
+Mostly useful for \code{\link{simbasins}()}.}
 
 \item{fixed}{A flag to declare a fixed point. The image of any fixed
 point is should be the original point.}
@@ -43,7 +45,7 @@ Use \code{col = color1, image = color2, iters = n} to create a gradient of color
 color1 and color2. See details for more information.}
 
 \item{attractor}{A flag to delcare a point as an attractor: a fixed point for the function that
-other points converge to. Used in \code{\link{guessregions}()}.}
+other points converge to. Used in \code{\link{simbasins}()}.}
 
 \item{crop}{If \code{crop==TRUE} points outside of defined range will be cropped,
 and no further images will be calculated.}
@@ -75,6 +77,7 @@ successive images are displayed, using a gradient between \code{col} and \code{i
 In most cases, rather than specifying \code{col} and \code{image} separately, they may be
 combined into a single vector.
 }
+
 \examples{
 library(dsmodels)
 
@@ -91,7 +94,7 @@ model + dsrange(3,3, discretize = .09) +
 
 dsmodel(fun, title = "A Point and a Label") +
  dsrange(3,3, discretize = .09) +
- dspoint(2.2, 2.1, label = "point!", col = "green")
+ dspoint(2.2, 2.1, label = "$x^{\\\\alpha}$", col = "green")
 
 dsmodel(fun, title = "A Point and Iterations of that Point") +
  dsrange(3,3, discretize = .09) +
@@ -101,4 +104,3 @@ dsmodel(fun, title = "Iterations of a Point over a Color Gradient") +
  dsrange(3,3, discretize = .09) +
 	dspoint(0.2, 0.5, image = "pink", iters = 3, col = "grey")
 }
-

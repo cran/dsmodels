@@ -4,7 +4,7 @@
 \alias{findFixedPoint}
 \title{Finds which fixed-point a point will end up at under a certain function.}
 \usage{
-findFixedPoint(x, y, points, eps, stable, fun)
+findFixedPoint(x, y, points, eps, tolerance, model, stride)
 }
 \arguments{
 \item{x}{A numeric initial x coordinate.}
@@ -15,12 +15,13 @@ findFixedPoint(x, y, points, eps, stable, fun)
 
 \item{eps}{An epsilon, expected to already be squared, used to determine when a point is closed enough to a fixed point.}
 
-\item{stable}{A, usually smaller, value used to determine when a point has stopped moving without finding a nearby fixpoint.}
+\item{tolerance}{A, usually smaller, value used to determine when a point has stopped moving without finding a nearby fixpoint.}
 
-\item{fun}{A two-dimensional function, taking an x and y and returning a list of x' y'.}
+\item{model}{A dsmodel encapsulating the function to be applied.}
+
+\item{stride}{The number of times to apply the function at each step.}
 }
 \description{
 Finds which fixed-point a point will end up at under a certain function.
 }
 \keyword{internal}
-

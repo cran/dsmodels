@@ -16,4 +16,3 @@ Returns all positions of elements in \code{v} where \code{fun(v)}
 returns \code{FALSE}.
 }
 \keyword{internal}
-

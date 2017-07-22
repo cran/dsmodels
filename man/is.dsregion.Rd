@@ -13,4 +13,3 @@ is.dsregion(x)
 Reports whether x is a dsregion object.
 }
 \keyword{internal}
-

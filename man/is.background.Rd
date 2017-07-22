@@ -13,4 +13,3 @@ is.background(x)
 Checks if object is a background
 }
 \keyword{internal}
-

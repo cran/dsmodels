@@ -2,7 +2,7 @@
 % Please edit documentation in R/dsdots.R
 \name{dsdots}
 \alias{dsdots}
-\title{Adds a visualization of the system using dots.}
+\title{Adds a visualization of the system using dots}
 \usage{
 dsdots(col = "black", image = "", iters = 1, discretize = NULL,
   crop = TRUE, size = 0.37, behind = TRUE, ...)
@@ -90,4 +90,3 @@ dsmodel(fun, title = "Display Only the Third Iteration") +
 
 \code{\link{dspoint}}
 }
-

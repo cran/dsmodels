@@ -13,4 +13,3 @@ is.curve(x)
 Reports whether x is a dscurves object.
 }
 \keyword{internal}
-

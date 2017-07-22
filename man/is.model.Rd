@@ -10,4 +10,3 @@
 Checks if object is a mode.
 }
 \keyword{internal}
-

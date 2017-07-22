@@ -2,12 +2,15 @@
 % Please edit documentation in R/axeslabel.R
 \name{xlabel}
 \alias{xlabel}
-\title{xlabel}
+\title{Create a label on the x-axis}
 \usage{
-xlabel(label = "", ...)
+xlabel(label = "", line = 3, ...)
 }
 \arguments{
-\item{label}{The title of the axis, to be displayed on image.}
+\item{label}{The title of the axis, to be displayed on image. Text can be input in the form of pseudo-LaTeX code within quotes.
+See \code{\link[latex2exp]{TeX}} for more details.}
+
+\item{line}{The distance from the axis the text will be displayed.}
 
 \item{...}{Extra parameters. These parameters are fed into \code{mtext()}.}
 }
@@ -25,7 +28,9 @@ Labels the x-axis
 
 model <- dsmodel(fun, title = "Cool Function!")
 model + dsrange(-2:3,-2:3, discretize = .09) +
- xlabel("X-Axis!") +
- ylabel("Y-Axis!")
+ xlabel("X-Axis shows $\\\\alpha$!") +
+ ylabel("Y-Axis shows $\\\\beta$!")
 }
-
+\seealso{
+\code{\link[latex2exp]{TeX}}
+}

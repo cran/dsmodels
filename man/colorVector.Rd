@@ -24,4 +24,3 @@ be a vector of whatever was input into \code{col} and \code{image} with output l
 \code{min(length(col) + length(image), iters)}.
 }
 \keyword{internal}
-

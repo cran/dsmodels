@@ -12,4 +12,3 @@ background
 Background
 }
 \keyword{internal}
-

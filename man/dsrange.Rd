@@ -2,9 +2,10 @@
 % Please edit documentation in R/dsrange.R
 \name{dsrange}
 \alias{dsrange}
-\title{Range of inputs for a model.}
+\title{Range of inputs for a model}
 \usage{
-dsrange(x, y, discretize = 0, renderCount = 101, ...)
+dsrange(x, y, discretize = 0, renderCount = 101, axes = TRUE,
+  frame.plot = TRUE, ...)
 }
 \arguments{
 \item{x}{Specifies the minimum and maximum for the x axis.
@@ -18,11 +19,15 @@ If a collection of values are provided, the minimum and maximum are used as the 
 \item{discretize}{If a value is provided, the field is discretized into an array of points. The value
 specifies the distance between each point.
 This becomes the default when displaying \code{\link{dsarrows}} or \code{\link{dsdots}}.
-The number of points in the field is defined by:
-\deqn{(xmax-xmin+1)(ymax-ymin+1)/discretize.}{ascii}}
+The number of points in the field is defined by:}
 
 \item{renderCount}{The number of points that a curve will be computed at when being
 displayed. Default 101.}
+
+\item{axes}{If \code{FALSE}, the axes will not be drawn. Defaults to \code{TRUE}.}
+
+\item{frame.plot}{If \code{FALSE}, the frame of the plot will not be drawn. Defaults to \code{TRUE}.
+\deqn{(xmax-xmin+1)(ymax-ymin+1)/discretize.}{ascii}}
 
 \item{...}{Further fields for the dsrange object.}
 }
@@ -55,4 +60,3 @@ model + dsrange(3, 3, discretize = .09)
 
 \code{\link{dsdots}}
 }
-

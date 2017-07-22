@@ -13,4 +13,3 @@ is.feature(x)
 Checks if object is a feature
 }
 \keyword{internal}
-

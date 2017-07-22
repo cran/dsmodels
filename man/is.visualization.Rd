@@ -13,4 +13,3 @@ is.visualization(x)
 Checks if object is a visualization
 }
 \keyword{internal}
-

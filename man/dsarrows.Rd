@@ -2,7 +2,7 @@
 % Please edit documentation in R/dsarrows.R
 \name{dsarrows}
 \alias{dsarrows}
-\title{Add a visualization of the system using arrows.}
+\title{Add a visualization of the system using arrows}
 \usage{
 dsarrows(scale = 0.9, col = "blue", angle = 30, type = "simple",
   length = NULL, iters = 1, head.length = 0.2, discretize = NULL,
@@ -76,4 +76,3 @@ dsmodel(fun, title = "Spaced Purple Arrows") +
 \seealso{
 \code{\link{dsdots}}
 }
-

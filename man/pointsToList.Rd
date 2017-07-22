@@ -2,7 +2,7 @@
 % Please edit documentation in R/dspoint.R
 \name{pointsToList}
 \alias{pointsToList}
-\title{Converts a list of points to a list of x coorinates, y coordinates, region colors, and indexes.}
+\title{Converts a list of points to a list of x coordinates, y coordinates, region colors, and indexes.}
 \usage{
 pointsToList(points)
 }
@@ -10,7 +10,6 @@ pointsToList(points)
 \item{points}{A list of dspoints, or anything that supports $x, $y, and $col}
 }
 \description{
-Converts a list of points to a list of x coorinates, y coordinates, region colors, and indexes.
+Converts a list of points to a list of x coordinates, y coordinates, region colors, and indexes.
 }
 \keyword{internal}
-

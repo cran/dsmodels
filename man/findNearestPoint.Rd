@@ -2,7 +2,7 @@
 % Please edit documentation in R/dspoint.R
 \name{findNearestPoint}
 \alias{findNearestPoint}
-\title{Determines which point in a list is closest to the input.}
+\title{Determines which point in a list is closest to the input. 0 is used if all are further from  epsilon.}
 \usage{
 findNearestPoint(x, y, points, eps, deep = TRUE)
 }
@@ -18,7 +18,6 @@ findNearestPoint(x, y, points, eps, deep = TRUE)
 \item{deep}{If true, only return a point if it is within epsilon distance. Otherwise, return the closest point.}
 }
 \description{
-Determines which point in a list is closest to the input.
+Determines which point in a list is closest to the input. 0 is used if all are further from  epsilon.
 }
 \keyword{internal}
-

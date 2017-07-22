@@ -13,4 +13,3 @@ is.xlabel(x)
 Checks to see if object is xlabel.
 }
 \keyword{internal}
-

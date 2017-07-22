@@ -15,4 +15,3 @@ features(f1, f2)
 Defines a category for the different kinds of non-model dsprotos
 }
 \keyword{internal}
-

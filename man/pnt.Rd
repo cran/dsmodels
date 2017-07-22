@@ -5,7 +5,7 @@
 \title{Alias to make constructing points for regions easier.}
 \usage{
 pnt(x, y, label = "", pch = 21, size = 2, col = "blue",
-  regionCol = NULL, image = "", offset = c(0, 0.5), display = TRUE,
+  regionCol = NULL, image = "", offset = NULL, display = TRUE,
   fixed = FALSE, iters = 0, attractor = FALSE, crop = TRUE,
   artificial = FALSE, ...)
 }
@@ -13,4 +13,3 @@ pnt(x, y, label = "", pch = 21, size = 2, col = "blue",
 Alias to make constructing points for regions easier.
 }
 \keyword{internal}
-

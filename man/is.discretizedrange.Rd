@@ -13,4 +13,3 @@ is.discretizedrange(x)
 Reports whether x is a discretized range.
 }
 \keyword{internal}
-

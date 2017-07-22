@@ -13,4 +13,3 @@ is.ylabel(x)
 Checks to see if object is ylabel.
 }
 \keyword{internal}
-

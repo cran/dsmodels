@@ -13,4 +13,3 @@ is.dsproto(x)
 Tests if an object is a ds object.
 }
 \keyword{internal}
-

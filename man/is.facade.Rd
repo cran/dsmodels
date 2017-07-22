@@ -13,4 +13,3 @@ is.facade(x)
 Checks if object is a facade
 }
 \keyword{internal}
-

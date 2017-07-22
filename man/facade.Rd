@@ -12,4 +12,3 @@ facade
 Facade
 }
 \keyword{internal}
-
